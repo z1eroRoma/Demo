@@ -1,0 +1,137 @@
+<!-- Обработчик ФИО -->
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!--         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!--         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!--         mc:Ignorable="d" Width="600" Height="200" WindowStartupLocation="CenterScreen" -->
+<!--         x:Class="Demo.MainWindow" -->
+<!--         Title="Валидация данных"> -->
+<!--     <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="0" Name="DataFromApiTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="1" Name="ValidationResultTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!-- -->
+<!--         <Button Grid.Row="0" Grid.Column="0" Click="GetDataFromApi_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Получить данные"></Button> -->
+<!--         <Button Grid.Row="1" Grid.Column="0" Click="SendFullNameTestResult_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Отправить результат теста"></Button> -->
+<!--     </Grid> -->
+<!-- </Window> -->
+
+<!-- Экран Email -->
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!--         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!--         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!--         mc:Ignorable="d" Width="600" Height="200" WindowStartupLocation="CenterScreen" -->
+<!--         x:Class="Demo.MainWindow" -->
+<!--         Title="Валидация данных"> -->
+<!--     <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="0" Name="DataFromApiTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="1" Name="ValidationResultTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!-- -->
+<!--         <Button Grid.Row="0" Grid.Column="0" Click="GetEmailFromApi_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Получить данные"></Button> -->
+<!--         <Button Grid.Row="1" Grid.Column="0" Click="SendEmailTestResult_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Отправить результат теста"></Button> -->
+<!--     </Grid> -->
+<!-- </Window> -->
+
+<!-- Экран Мобильный телефон -->
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!--         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!--         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!--         mc:Ignorable="d" Width="600" Height="200" WindowStartupLocation="CenterScreen" -->
+<!--         x:Class="Demo.MainWindow" -->
+<!--         Title="Валидация данных"> -->
+<!--     <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="0" Name="DataFromApiTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="1" Name="ValidationResultTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!-- -->
+<!--         <Button Grid.Row="0" Grid.Column="0" Click="GetMobilePhoneFromApi_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Получить данные"></Button> -->
+<!--         <Button Grid.Row="1" Grid.Column="0" Click="SendMobilePhoneTestResult_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Отправить результат теста"></Button> -->
+<!--     </Grid> -->
+<!-- </Window> -->
+
+<!-- Экран СНИЛС -->
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!--         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!--         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!--         mc:Ignorable="d" Width="600" Height="200" WindowStartupLocation="CenterScreen" -->
+<!--         x:Class="Demo.MainWindow" -->
+<!--         Title="Валидация данных"> -->
+<!--     <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="0" Name="DataFromApiTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="1" Name="ValidationResultTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!-- -->
+<!--         <Button Grid.Row="0" Grid.Column="0" Click="GetSnilsFromApi_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Получить данные"></Button> -->
+<!--         <Button Grid.Row="1" Grid.Column="0" Click="SendSnilsTestResult_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Отправить результат теста"></Button> -->
+<!--     </Grid> -->
+<!-- </Window> -->
+
+<!-- Экран ИНН -->
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!--         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!--         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!--         mc:Ignorable="d" Width="600" Height="200" WindowStartupLocation="CenterScreen" -->
+<!--         x:Class="Demo.MainWindow" -->
+<!--         Title="Валидация данных"> -->
+<!--     <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="0" Name="DataFromApiTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!--         <TextBlock Grid.Column="1" Grid.Row="1" Name="ValidationResultTBlock" -->
+<!--                    HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock> -->
+<!-- -->
+<!--         <Button Grid.Row="0" Grid.Column="0" Click="GetInnFromApi_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Получить данные"></Button> -->
+<!--         <Button Grid.Row="1" Grid.Column="0" Click="SendInnTestResult_OnClick" -->
+<!--                 HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" -->
+<!--                 Content="Отправить результат теста"></Button> -->
+<!--     </Grid> -->
+<!-- </Window> -->
+
+<!-- Экран Паспорт -->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="600" Height="200" WindowStartupLocation="CenterScreen"
+        x:Class="Demo.MainWindow"
+        Title="Валидация данных">
+    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
+        <TextBlock Grid.Column="1" Grid.Row="0" Name="DataFromApiTBlock"
+                   HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Name="ValidationResultTBlock"
+                   HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+
+        <Button Grid.Row="0" Grid.Column="0" Click="GetIdentityCardFromApi_OnClick"
+                HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                Content="Получить данные"></Button>
+        <Button Grid.Row="1" Grid.Column="0" Click="SendIdentityCardTestResult_OnClick"
+                HorizontalAlignment="Center" Height="40" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                Content="Отправить результат теста"></Button>
+    </Grid>
+</Window>
