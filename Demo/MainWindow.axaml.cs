@@ -63,23 +63,22 @@ public partial class MainWindow : Window
     //     DataFromApiTBlock.Text = DataFromApi;
     // }
     
-    
     //// Обработчик Email
     // private void SendEmailTestResult_OnClick(object? sender, RoutedEventArgs e)
     // {
     //     var pattern = @"^[@\s]+@[^@\s]+\.[^@\s]+$";
     //     var validationResult = Regex.IsMatch(EmailFromApi, pattern);
-    //     EmailValidationResultTBlock.Text = validationResult ? "Email корректен" : "Email некорректен";
+    //     ValidationResultTBlock.Text = validationResult ? "Email корректен" : "Email некорректен";
     //
     //     using var doc = WordprocessingDocument.Open(@"TestCaseEmail.docx", true);
     //     var document = doc.MainDocumentPart.Document;
     //
-    //     if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Email Result 1")) != null)
+    //     if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Result 1")) != null)
     //     {
-    //         ReplaceEmailTextTestCase("Email Result 1", validationResult, document);
-    //     } else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Email Result 2")) != null)
+    //         ReplaceEmailTextTestCase("Result 1", validationResult, document);
+    //     } else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Result 2")) != null)
     //     {
-    //         ReplaceEmailTextTestCase("Email Result 2", validationResult, document);
+    //         ReplaceEmailTextTestCase("Result 2", validationResult, document);
     //     }
     // }
     //
@@ -99,66 +98,66 @@ public partial class MainWindow : Window
     //     var httpClient = new HttpClient();
     //     var content = await httpClient.GetStringAsync("http://localhost:4444/TransferSimulator/email");
     //     var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
-    //     EmailFromApi = data["value"];
-    //     EmailFromApiTBlock.Text = EmailFromApi;
+    //     DataFromApi = data["value"];
+    //     DataFromApiTBlock.Text = DataFromApi;
     // }
 
     //// Обработчик мобильный телефон
-    // private void SendMobilePhoneTestResult_OnClick(object? sender, RoutedEventArgs e)
-    // {
-    //     var pattern = @"^\+7\d{10]$";
-    //     var validationResult = Regex.IsMatch(MobilePhoneFromApi, pattern);
-    //     MobilePhoneValidationResultTBlock.Text = validationResult ? "Мобильный телефон корректен" : "Мобильный телефон некорректен";
-    //
-    //     using var doc = WordprocessingDocument.Open(@"TestCaseMobilePhone.docx", true);
-    //     var document = doc.MainDocumentPart.Document;
-    //
-    //     if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("MobilePhone Result 1")) != null)
-    //     {
-    //         ReplaceMobilePhoneTextTestCase("MobilePhone Result 1", validationResult, document);
-    //     } else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("MobilePhone Result 2")) != null)
-    //     {
-    //         ReplaceMobilePhoneTextTestCase("MobilePhone Result 2", validationResult, document);
-    //     }
-    // }
-    //
-    // private void ReplaceMobilePhoneTextTestCase(string replacedText, bool validationResult, Document document)
-    // {
-    //     foreach (var text in document.Descendants<Text>())
-    //     {
-    //         if (text.Text.Contains(replacedText))
-    //         {
-    //             text.Text = text.Text.Replace(replacedText, validationResult ? "Успешно" : "Не успешно");
-    //         }
-    //     }
-    // }
-    //
-    // private async void GetMobilePhoneFromApi_OnClick(object? sender, RoutedEventArgs e)
-    // {
-    //     var httpClient = new HttpClient();
-    //     var content = await httpClient.GetStringAsync("http://localhost:4444/TransferSimulator/mobilePhone");
-    //     var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
-    //     MobilePhoneFromApi = data["value"];
-    //     MobilePhoneFromApiTBlock.Text = MobilePhoneFromApi;
-    // }
+    private void SendMobilePhoneTestResult_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var pattern = @"^\+7 \d{3} \d{3}-\d{2}-\d{2}$";
+        var validationResult = Regex.IsMatch(MobilePhoneFromApi, pattern);
+        ValidationResultTBlock.Text = validationResult ? "Мобильный телефон корректен" : "Мобильный телефон некорректен";
+    
+        using var doc = WordprocessingDocument.Open(@"TestCase.docx", true);
+        var document = doc.MainDocumentPart.Document;
+    
+        if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Result 1")) != null)
+        {
+            ReplaceMobilePhoneTextTestCase("Result 1", validationResult, document);
+        } else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Result 2")) != null)
+        {
+            ReplaceMobilePhoneTextTestCase("Result 2", validationResult, document);
+        }
+    }
+    
+    private void ReplaceMobilePhoneTextTestCase(string replacedText, bool validationResult, Document document)
+    {
+        foreach (var text in document.Descendants<Text>())
+        {
+            if (text.Text.Contains(replacedText))
+            {
+                text.Text = text.Text.Replace(replacedText, validationResult ? "Успешно" : "Не успешно");
+            }
+        }
+    }
+    // http://localhost:4444/TransferSimulator/mobilePhone
+    private async void GetMobilePhoneFromApi_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var httpClient = new HttpClient();
+        var content = await httpClient.GetStringAsync("http://10.30.12.163:4444/TransferSimulator/mobilePhone");
+        var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
+        MobilePhoneFromApi = data["value"];
+        DataFromApiTBlock.Text = MobilePhoneFromApi;
+    }
 
     //// Обработчик СНИСЛ
     // private void SendSnilsTestResult_OnClick(object? sender, RoutedEventArgs e)
     // {
     //     var pattern = @"^\d{11}$";
     //     var validationResult = Regex.IsMatch(SnilsFromApi, pattern);
-    //     SnilsValidationResultTBlock.Text = validationResult ? "СНИЛС корректен" : "СНИЛС некорректен";
+    //     ValidationResultTBlock.Text = validationResult ? "СНИЛС корректен" : "СНИЛС некорректен";
     //
     //     using var doc = WordprocessingDocument.Open(@"TestCaseSnils.docx", true);
     //     var document = doc.MainDocumentPart.Document;
     //
-    //     if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Snils Result 1")) != null)
+    //     if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Result 1")) != null)
     //     {
-    //         ReplaceSnilsTextTestCase("Snils Result 1", validationResult, document);
+    //         ReplaceSnilsTextTestCase("Result 1", validationResult, document);
     //     }
-    //     else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Snils Result 2")) != null)
+    //     else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("Result 2")) != null)
     //     {
-    //         ReplaceSnilsTextTestCase("Snils Result 2", validationResult, document);
+    //         ReplaceSnilsTextTestCase("Result 2", validationResult, document);
     //     }
     // }
     //
@@ -178,8 +177,8 @@ public partial class MainWindow : Window
     //     var httpClient = new HttpClient();
     //     var content = await httpClient.GetStringAsync("http://localhost:4444/TransferSimulator/snils");
     //     var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
-    //     SnilsFromApi = data["value"];
-    //     SnilsFromApiTBlock.Text = SnilsFromApi;
+    //     DataFromApi = data["value"];
+    //     DataFromApiTBlock.Text = DataFromApi;
     // }
     
     //// Обработчик ИНН
@@ -223,42 +222,42 @@ public partial class MainWindow : Window
     // }
     
     //// Обработчик Паспорт
-    private void SendIdentityCardTestResult_OnClick(object? sender, RoutedEventArgs e)
-    {
-        var pattern = @"^\d{2}\s\d{2}\s\d{6}$";
-        var validationResult = Regex.IsMatch(IdentityCardFromApi, pattern);
-        IdentityCardValidationResultTBlock.Text = validationResult ? "Номер удостоверения личности корректен" : "Номер удостоверения личности некорректен";
-
-        using var doc = WordprocessingDocument.Open(@"TestCaseIdentityCard.docx", true);
-        var document = doc.MainDocumentPart.Document;
-
-        if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("IdentityCard Result 1")) != null)
-        {
-            ReplaceIdentityCardTextTestCase("IdentityCard Result 1", validationResult, document);
-        }
-        else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("IdentityCard Result 2")) != null)
-        {
-            ReplaceIdentityCardTextTestCase("IdentityCard Result 2", validationResult, document);
-        }
-    }
-
-    private void ReplaceIdentityCardTextTestCase(string replacedText, bool validationResult, Document document)
-    {
-        foreach (var text in document.Descendants<Text>())
-        {
-            if (text.Text.Contains(replacedText))
-            {
-                text.Text = text.Text.Replace(replacedText, validationResult ? "Успешно" : "Не успешно");
-            }
-        }
-    }
-
-    private async void GetIdentityCardFromApi_OnClick(object? sender, RoutedEventArgs e)
-    {
-        var httpClient = new HttpClient();
-        var content = await httpClient.GetStringAsync("http://localhost:4444/TransferSimulator/identityCard");
-        var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
-        IdentityCardFromApi = data["value"];
-        IdentityCardFromApiTBlock.Text = IdentityCardFromApi;
-    }
+    // private void SendIdentityCardTestResult_OnClick(object? sender, RoutedEventArgs e)
+    // {
+    //     var pattern = @"^\d{2}\s\d{2}\s\d{6}$";
+    //     var validationResult = Regex.IsMatch(IdentityCardFromApi, pattern);
+    //     IdentityCardValidationResultTBlock.Text = validationResult ? "Номер удостоверения личности корректен" : "Номер удостоверения личности некорректен";
+    //
+    //     using var doc = WordprocessingDocument.Open(@"TestCaseIdentityCard.docx", true);
+    //     var document = doc.MainDocumentPart.Document;
+    //
+    //     if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("IdentityCard Result 1")) != null)
+    //     {
+    //         ReplaceIdentityCardTextTestCase("IdentityCard Result 1", validationResult, document);
+    //     }
+    //     else if (document.Descendants<Text>().FirstOrDefault(text => text.Text.Contains("IdentityCard Result 2")) != null)
+    //     {
+    //         ReplaceIdentityCardTextTestCase("IdentityCard Result 2", validationResult, document);
+    //     }
+    // }
+    //
+    // private void ReplaceIdentityCardTextTestCase(string replacedText, bool validationResult, Document document)
+    // {
+    //     foreach (var text in document.Descendants<Text>())
+    //     {
+    //         if (text.Text.Contains(replacedText))
+    //         {
+    //             text.Text = text.Text.Replace(replacedText, validationResult ? "Успешно" : "Не успешно");
+    //         }
+    //     }
+    // }
+    //
+    // private async void GetIdentityCardFromApi_OnClick(object? sender, RoutedEventArgs e)
+    // {
+    //     var httpClient = new HttpClient();
+    //     var content = await httpClient.GetStringAsync("http://localhost:4444/TransferSimulator/identityCard");
+    //     var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
+    //     IdentityCardFromApi = data["value"];
+    //     IdentityCardFromApiTBlock.Text = IdentityCardFromApi;
+    // }
 }
